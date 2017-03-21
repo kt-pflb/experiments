@@ -6,6 +6,7 @@ module.exports = {
     beforeEach: function (browser, done) {
         browser.options.desiredCapabilities.username = process.env.SAUCE_USERNAME;
         browser.options.desiredCapabilities.accessKey = process.env.SAUCE_ACCESS_KEY;
+        browser.options.desiredCapabilities.build = process.env.CIRCLE_SHA1 + '_' + process.env.CIRCLE_BUILD_NUM;
         done();
     },
     test: function (browser) {
