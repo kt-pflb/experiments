@@ -17,7 +17,7 @@ afterAll
 
 node ./tests/prepare.js
 
-npm run start &
+npm run start:prod &
 
 timeout 10m bash -c "while ! lsof -i tcp:8080 -Fn | grep http-alt; do sleep 10; done"
 
